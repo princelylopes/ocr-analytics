@@ -59,7 +59,7 @@ AZURE_SUBSCRIPTION_KEY=your-subscription-key
 - `npm run build` - Build the frontend for production
 
 ## Project Structure
-ocr-analytics/
+```ocr-analytics/
 ├── backend/ # Express server
 │ ├── src/
 │ │ ├── config/
@@ -76,7 +76,7 @@ ocr-analytics/
 ├── .gitignore # Root gitignore
 ├── package.json # Root package.json
 └── README.md # Documentation
-
+```
 ## How to Use
 
 1. Open http://localhost:3000 in your browser
