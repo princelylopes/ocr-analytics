@@ -111,4 +111,6 @@ curl -X POST http://localhost:8000/api/ocr/analyze \
   - Network errors
   - API limitations
   - Missing credentials
- 
+
+## UI Preview
+![OCR Analytics UI](./UI_Image.png)
