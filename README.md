@@ -13,70 +13,69 @@ This application provides Optical Character Recognition (OCR) capabilities using
 - Azure account with Computer Vision resource
 - Azure API key and endpoint
 
-## Project Structure 
-ocr-analytics/
-├── backend/
-│ ├── src/
-│ │ ├── config/
-│ │ ├── controllers/
-│ │ ├── routes/
-│ │ └── app.js
-│ ├── .env
-│ └── package.json
-└── frontend/
-├── src/
-│ ├── components/
-│ └── ...
-└── package.json
+## Quick Start
 
-## Setup Instructions
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd ocr-analytics
+```
 
-### Backend Setup
-1. Navigate to the backend directory:
+2. Install dependencies for both frontend and backend:
+```bash
+npm run install-all
+```
+
+3. Set up environment variables:
 ```bash
 cd backend
+cp .env.example .env
+# Edit .env with your Azure credentials
 ```
 
-2. Install dependencies:
+4. Start both servers:
 ```bash
-npm install
+# From the root directory
+npm start
 ```
 
-3. Create a `.env` file in the backend directory:
+The application will be running at:
+- Frontend: http://localhost:3000
+- Backend: http://localhost:8000
+
+## Environment Variables
+Create a `.env` file in the backend directory with:
 ```env
 PORT=8000
 AZURE_ENDPOINT=https://your-resource-name.cognitiveservices.azure.com
 AZURE_SUBSCRIPTION_KEY=your-subscription-key
 ```
 
-4. Replace the Azure credentials with your own from Azure Portal.
+## Available Scripts
+- `npm run install-all` - Install dependencies for frontend and backend
+- `npm start` - Start both frontend and backend servers
+- `npm run server` - Start only the backend server
+- `npm run client` - Start only the frontend server
+- `npm run build` - Build the frontend for production
 
-### Frontend Setup
-1. Navigate to the frontend directory:
-```bash
-cd frontend
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-## Running the Application
-
-1. Start the backend server:
-```bash
-cd backend
-npm run dev
-```
-The backend will run on http://localhost:8000
-
-2. In a new terminal, start the frontend:
-```bash
-cd frontend
-npm start
-```
-The frontend will run on http://localhost:3000
+## Project Structure
+ocr-analytics/
+├── backend/ # Express server
+│ ├── src/
+│ │ ├── config/
+│ │ ├── controllers/
+│ │ ├── routes/
+│ │ └── app.js
+│ ├── .env.example
+│ └── package.json
+├── frontend/ # React application
+│ ├── src/
+│ │ ├── components/
+│ │ └── ...
+│ └── package.json
+├── .gitignore # Root gitignore
+├── package.json # Root package.json
+└── README.md # Documentation
 
 ## How to Use
 
@@ -112,4 +111,3 @@ curl -X POST http://localhost:8000/api/ocr/analyze \
   - Network errors
   - API limitations
   - Missing credentials
-
